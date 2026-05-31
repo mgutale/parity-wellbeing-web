@@ -779,11 +779,14 @@ footer {
   border-top: none;
 }
 
-.footer-inner {
+.footer-grid {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .footer-brand .logo {
@@ -1214,6 +1217,10 @@ footer {
   }
   
   .footer-inner {
+    text-align: center;
+  }
+  
+  .footer-grid {
     text-align: center;
   }
   

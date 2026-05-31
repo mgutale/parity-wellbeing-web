@@ -615,7 +615,6 @@ ul { list-style:none; }
 .trust-stats {
   display:flex; 
   justify-content:space-around; 
-  text-align:center; 
   flex-wrap:wrap; 
   gap:3rem;
   position:relative; 
@@ -642,7 +641,6 @@ ul { list-style:none; }
 .download-cta {
   padding: 100px 0;
   background: linear-gradient(180deg, var(--twilight-100) 0%, #f7f9fb 100%);
-  text-align:center;
 }
 .store-badges {
   display:flex; 

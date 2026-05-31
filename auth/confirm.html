@@ -5,38 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Confirm — Parity Wellbeing</title>
   <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(170deg, #EAF4F4 0%, #f7f9fb 55%, #EBF3FB 100%);
+      background: linear-gradient(170deg, #F0FDF6 0%, #f7f9fb 55%, #F8FAFC 100%);
       min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 1.5rem;
-      color: #2C2C2A;
+      color: #171717;
     }
     .card {
-      background: #fff;
-      border: 1px solid #E8E8E4;
+      background: #ffffff;
+      border: 1px solid #E5E5E5;
       border-radius: 18px;
       padding: 2.5rem 2rem;
-      max-width: 400px;
+      max-width: 420px;
       width: 100%;
       text-align: center;
       box-shadow: 0 12px 40px rgba(0,0,0,0.08);
     }
     .logo-mark {
-      width: 48px; height: 48px; border-radius: 12px;
-      background: linear-gradient(135deg, #1D9E75, #4DB89E);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 1.6rem; font-weight: 700;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1D9E75, #158a66);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 800;
       margin: 0 auto 1.2rem;
+      box-shadow: 0 4px 12px rgba(29,158,117,0.25);
     }
-    h1 { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
-    p { font-size: 0.95rem; color: #6B6B68; line-height: 1.65; margin-bottom: 1.2rem; }
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    p {
+      font-size: 0.95rem;
+      color: #737373;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
     .spinner {
-      width: 40px; height: 40px;
-      border: 3px solid #E8E8E4;
+      width: 40px;
+      height: 40px;
+      border: 3px solid #E5E5E5;
       border-top-color: #1D9E75;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
@@ -44,16 +69,39 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.8rem 1.6rem; background: linear-gradient(135deg, #1D9E75, #4DB89E);
-      color: #fff; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.9rem;
-      border-radius: 10px; text-decoration: none; border: none; cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.8rem;
+      background: linear-gradient(135deg, #1D9E75, #158a66);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 150ms ease, box-shadow 150ms ease;
     }
-    .btn:hover { opacity: 0.92; }
-    .error { color: #dc2626; font-size: 0.9rem; }
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(29,158,117,0.3);
+    }
+    .btn:active { transform: scale(0.97); }
+    .error { color: #dc2626; font-size: 0.9rem; margin-top: 0.5rem; }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #E5E5E5;
+      margin: 1.5rem 0;
+    }
+    .footer-text {
+      font-size: 0.8rem;
+      color: #A3A3A3;
+      margin-top: 0.5rem;
+    }
   </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="card" id="card">
@@ -62,30 +110,31 @@
     <p id="message">We're verifying your request and launching the app.</p>
     <div class="spinner" id="spinner"></div>
     <a href="/" class="btn" id="fallbackBtn" style="display:none;">Back to home</a>
+    <div class="divider" id="divider" style="display:none;"></div>
+    <p class="footer-text" id="footerText" style="display:none;">
+      Didn't work? Try opening the app manually from your home screen.
+    </p>
   </div>
 
   <script>
     (function () {
       'use strict';
 
-      /* ── Supabase OAuth hash format (fragment)
-         #access_token=xxx&refresh_token=xxx&expires_at=123&type=recovery|signup|magiclink
-      ── */
-      const hash = window.location.hash.slice(1); // strip leading #
+      const hash = window.location.hash.slice(1);
       const params = new URLSearchParams(hash);
 
       const accessToken  = params.get('access_token');
       const refreshToken = params.get('refresh_token');
-      const type         = params.get('type'); // recovery | signup | magiclink | invite
+      const type         = params.get('type');
       const tokenHash    = params.get('token_hash');
 
       const titleEl    = document.getElementById('title');
       const msgEl      = document.getElementById('message');
       const spinnerEl  = document.getElementById('spinner');
       const fallbackEl = document.getElementById('fallbackBtn');
-      const cardEl     = document.getElementById('card');
+      const dividerEl  = document.getElementById('divider');
+      const footerEl   = document.getElementById('footerText');
 
-      /* ── Build deep link back to app ── */
       function buildDeepLink() {
         const dl = new URL('parity://auth-callback');
         if (accessToken)  dl.searchParams.set('access_token',  accessToken);
@@ -95,7 +144,6 @@
         return dl.toString();
       }
 
-      /* ── No tokens? Show error ── */
       if (!accessToken && !tokenHash) {
         titleEl.textContent   = 'Link expired or invalid';
         msgEl.textContent     = 'Please try again from the app, or contact support if the problem persists.';
@@ -105,7 +153,6 @@
         return;
       }
 
-      /* ── Update UI for known action ── */
       if (type === 'recovery') {
         titleEl.textContent = 'Resetting your password…';
         msgEl.textContent   = 'Please wait while we open Parity Wellbeing.';
@@ -117,7 +164,6 @@
         msgEl.textContent   = 'Please wait while we open Parity Wellbeing.';
       }
 
-      /* ── Redirect to app ── */
       const deepLink = buildDeepLink();
 
       function showFallback() {
@@ -125,16 +171,16 @@
         fallbackEl.style.display = 'inline-flex';
         fallbackEl.textContent = 'Open Parity Wellbeing';
         fallbackEl.href = deepLink;
+        dividerEl.style.display = 'block';
+        footerEl.style.display = 'block';
         titleEl.textContent = 'Tap below to open the app';
         msgEl.textContent = 'If the app does not open automatically, tap the button below.';
       }
 
-      /* Try auto-redirect after short delay (gives browser time to render) */
       setTimeout(function () {
         window.location.replace(deepLink);
       }, 600);
 
-      /* If still here after 4s, user likely doesn't have the app installed */
       setTimeout(showFallback, 3500);
     })();
   </script>

@@ -84,13 +84,13 @@ ul { list-style:none; }
 
 /* ── Utilities ── */
 .container { 
-  max-width:100%; 
+  max-width:var(--max-w); 
   margin:0 auto; 
   padding:0 1.5rem; 
   width: 100%;
 }
 .container-narrow { 
-  max-width:100%; 
+  max-width:700px; 
   margin:0 auto; 
   padding:0 1.5rem; 
   width: 100%;

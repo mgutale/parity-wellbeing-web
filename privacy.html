@@ -9,7 +9,10 @@
 </head>
 <body>
   <script>document.documentElement.classList.add('js');</script>
-  <nav class="navbar">
+<!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="logo"><div class="logo-mark">P</div><span>Parity Wellbeing</span></a>
       <div class="nav-links">
@@ -17,21 +20,27 @@
         <a href="about.html">About Us</a>
         <a href="support.html">Support</a>
         <a href="contact.html">Contact</a>
-        <a href="privacy.html" class="active">Privacy</a>
+        <a href="privacy.html" class="active" aria-current="page">Privacy</a>
         <a href="terms.html">Terms</a>
       </div>
       <a href="index.html#download" class="btn btn-primary nav-cta">Get the App</a>
-      <button class="menu-toggle" >☰</button>
+      <button class="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="menu-icon" aria-hidden="true">☰</span>
+      </button>
     </div>
   </nav>
-  <div class="mobile-nav">
-    <a href="index.html">Home</a><a href="about.html">About Us</a>
-    <a href="support.html">Support</a><a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-    <a href="gdpr.html">GDPR</a><a href="cookies.html">Cookies</a>
+  <div id="mobile-nav" class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="gdpr.html">GDPR</a>
+    <a href="cookies.html">Cookies</a>
   </div>
 
-  <section class="page-header">
+  <section class="page-header" id="main-content">
     <div class="container">
       <h1>Privacy Policy</h1>
       <p>How we collect, use, store and protect your personal data.</p>
@@ -137,11 +146,11 @@
     </div>
   </section>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo"><div class="logo-mark">P</div><span>Parity Wellbeing</span></div>
+          <a href="index.html" class="logo" aria-label="Parity Wellbeing Home"><div class="logo-mark">P</div><span>Parity Wellbeing</span></a>
           <p>Built by ParityLabs — a UK-based software development and IT consultancy with over a decade of experience delivering world-class digital products.</p>
         </div>
         <div class="footer-col">

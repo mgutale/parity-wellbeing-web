@@ -3,31 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support — Parity Wellbeing</title>
-  <meta name="description" content="Get help with Parity Wellbeing. FAQs, troubleshooting, and how to contact support.">
+  <title>Support — Parity Wellbeing Help Centre</title>
+  <meta name="description" content="Get help with Parity Wellbeing. FAQs, troubleshooting, account recovery, and contact options for support.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <script>document.documentElement.classList.add('js');</script>
-  <nav class="navbar">
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
-      <a href="index.html" class="logo"><div class="logo-mark">P</div><span>Parity Wellbeing</span></a>
+      <a href="index.html" class="logo" aria-label="Parity Wellbeing Home">
+        <div class="logo-mark">P</div>
+        <span>Parity Wellbeing</span>
+      </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="support.html" class="active">Support</a>
+        <a href="support.html" class="active" aria-current="page">Support</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </div>
       <a href="index.html#download" class="btn btn-primary nav-cta">Get the App</a>
-      <button class="menu-toggle" >☰</button>
+      <button class="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="menu-icon" aria-hidden="true">☰</span>
+      </button>
     </div>
   </nav>
-  <div class="mobile-nav">
+
+  <div id="mobile-nav" class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
-    <a href="support.html">Support</a>
+    <a href="support.html" aria-current="page">Support</a>
     <a href="contact.html">Contact</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
@@ -35,80 +45,118 @@
     <a href="cookies.html">Cookies</a>
   </div>
 
-  <section class="page-header">
+  <!-- Page Header -->
+  <section class="page-header" id="main-content">
     <div class="container">
-      <h1>Support Centre</h1>
-      <p>Quick answers and how to get help with Parity Wellbeing.</p>
+      <h1>Help Centre</h1>
+      <p>Everything you need to get the most out of Parity Wellbeing.</p>
     </div>
   </section>
 
-  <section class="content-article">
-    <div class="container-narrow">
-      <div class="content-card">
+  <!-- FAQ Section -->
+  <section class="content-article" aria-label="Frequently Asked Questions">
+    <div class="container">
+      <div class="section-overline reveal">FAQs</div>
+      <h2 class="section-title reveal">Common Questions</h2>
+      <p class="lead reveal" style="max-width:600px; margin-bottom:2rem;">
+        Find quick answers to the most common questions about Parity Wellbeing.
+      </p>
 
-        <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            How do I reset my password?
+          </button>
+          <div class="faq-answer">
+            <p>Go to the login screen in the app and tap "Forgot Password." You'll receive a secure reset link via email. For security, links expire after 24 hours.</p>
+          </div>
+        </div>
 
-        <h3>Is Parity Wellbeing a medical device?</h3>
-        <p><strong>No.</strong> Parity Wellbeing is a self-monitoring and wellness tool. It is not a medical device and does not provide diagnosis or treatment advice. If you are experiencing a mental health crisis, please contact your GP or call NHS 111 (UK) / your local emergency services.</p>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Is my data secure?
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. All your data is encrypted end-to-end using AES-256. We never sell your data, and you can export or delete everything at any time from your account settings.</p>
+          </div>
+        </div>
 
-        <h3>Is my data really private?</h3>
-        <p>Yes. Your wellbeing data is encrypted both at rest and in transit. We do not sell your data, use third-party ad trackers, or share identifiable information with anyone. See our <a href="privacy.html">Privacy Policy</a> and <a href="gdpr.html">GDPR page</a> for full details.</p>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Can I use Parity offline?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Parity is designed to work offline. Your check-ins are stored locally and sync securely when you're back online. You won't lose any data.</p>
+          </div>
+        </div>
 
-        <h3>Can I export my data?</h3>
-        <p>Yes. You can export your wellbeing history as a JSON or CSV file at any time from the Settings screen. This is useful if you want to share trends with a healthcare provider or simply keep your own offline backup.</p>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            How is my wellbeing score calculated?
+          </button>
+          <div class="faq-answer">
+            <p>We use the UK Office for National Statistics Personal Wellbeing Survey framework — the same questions used to measure national wellbeing. Your score is averaged across four dimensions: life satisfaction, worthwhile, happiness, and anxiety (inverted).</p>
+          </div>
+        </div>
 
-        <h3>How does the scoring work?</h3>
-        <p>Parity Wellbeing uses the <strong>ONS Personal Wellbeing Survey</strong> framework — the same questions the UK government uses to measure national wellbeing. Each response is scored 0–10 across four dimensions: life satisfaction, feeling things are worthwhile, happiness, and anxiety. We also benchmark your scores anonymously against national averages.</p>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Can I export my data?
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Go to Settings > Data > Export. You can download your complete history as a CSV or PDF, perfect for sharing with your GP or therapist.</p>
+          </div>
+        </div>
 
-        <h3>What happens if I delete my account?</h3>
-        <p>Deleting your account will permanently remove all your personal data from our servers within 90 days. Your anonymised demographic data (age range, region) may be retained for national benchmarking purposes, but it cannot be linked back to you.</p>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            What devices are supported?
+          </button>
+          <div class="faq-answer">
+            <p>Parity Wellbeing is available on iOS 15+ (iPhone and iPad). Android and Apple Watch support are coming soon.</p>
+          </div>
+        </div>
 
-        <h3>Do I need an internet connection?</h3>
-        <p>You can record check-ins and journal entries offline. The app syncs your data to secure cloud storage when you're back online. Some features (AI insights, benchmarking) require an internet connection.</p>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            How do I cancel my subscription?
+          </button>
+          <div class="faq-answer">
+            <p>You can cancel anytime from your App Store subscriptions. Your access continues until the end of your billing period. No hoops to jump through.</p>
+          </div>
+        </div>
 
-        <h3>Is there an Android version?</h3>
-        <p>Parity Wellbeing is currently available for iOS. An Android version is planned for late 2026.</p>
-
-        <h3>Will there be a subscription fee?</h3>
-        <p>Parity Wellbeing is free to download and use. We may introduce optional premium features in the future, but core wellbeing tracking will always remain free.</p>
-
-        <div class="divider"></div>
-
-        <h2>Need More Help?</h2>
-        <p>Can't find what you're looking for? We're here to help.</p>
-        <ul>
-          <li><strong>Email:</strong> <a href="mailto:support@paritylabs.uk">support@paritylabs.uk</a></li>
-          <li><strong>Response time:</strong> Within 24–48 business hours</li>
-          <li><strong>Languages:</strong> English</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary" style="margin-top:1rem;">Contact Support</a>
-
-        <div class="divider"></div>
-
-        <h2>Emergency Resources</h2>
-        <p>If you or someone you know is in crisis:</p>
-        <ul>
-          <li><strong>NHS 111</strong> — dial 111 (UK)</li>
-          <li><strong>Samaritans</strong> — dial <strong>116 123</strong> (free, 24/7)</li>
-          <li><strong>Emergency services</strong> — dial <strong>999</strong> (UK)</li>
-        </ul>
-        <p><em>Parity Wellbeing is not a substitute for professional mental health care.</em></p>
-
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Who can see my wellbeing data?
+          </button>
+          <div class="faq-answer">
+            <p>Only you. We don't share your data with employers, insurers, or third parties. Our AI insights are generated on-device or via anonymised processing.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- Contact CTA -->
+  <section class="download-cta" aria-label="Contact Support">
+    <div class="container">
+      <div class="section-header" style="max-width:560px; margin:0 auto;">
+        <div class="section-overline reveal">Still Need Help?</div>
+        <h2 class="section-title reveal">We're here for you</h2>
+        <p class="lead reveal">Can't find what you're looking for? Reach out directly and we'll get back to you within 24 hours.</p>
+        <a href="contact.html" class="btn btn-primary reveal reveal-delay-1">Contact Support</a>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo">
-            <div class="logo-mark">P</div>
-            <span>Parity Wellbeing</span>
-          </div>
+          <a href="index.html" class="logo" aria-label="Parity Wellbeing Home"><div class="logo-mark">P</div><span>Parity Wellbeing</span></a>
           <p>Built by ParityLabs — a UK-based software development and IT consultancy with over a decade of experience delivering world-class digital products.</p>
         </div>
-
         <div class="footer-col">
           <h5>Product</h5>
           <ul>
@@ -118,7 +166,6 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h5>Company</h5>
           <ul>
@@ -127,7 +174,6 @@
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h5>Legal</h5>
           <ul>
@@ -138,7 +184,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span>© ParityLabs Ltd. All rights reserved.</span>
         <span>Made with care in London, UK.</span>
@@ -147,16 +192,44 @@
   </footer>
 
   <script>
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) {
+    document.querySelectorAll('.reveal').forEach(el => {
       observer.observe(el);
+      requestAnimationFrame(() => el.classList.add('visible'));
+    });
+
+    // Navbar shadow
+    const nav = document.querySelector('.navbar');
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) return;
+      scrollTimeout = requestAnimationFrame(() => {
+        nav.style.boxShadow = window.scrollY > 20 ? '0 4px 20px rgba(0,0,0,0.06)' : 'none';
+        scrollTimeout = null;
+      });
+    }, { passive: true });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
+        question.setAttribute('aria-expanded', !isActive);
+      });
     });
   </script>
   <script src="main.js"></script>

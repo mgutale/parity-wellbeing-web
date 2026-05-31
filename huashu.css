@@ -35,7 +35,7 @@
   --font-display: 'Crimson Pro', Georgia, serif;
   --font-body: 'Inter', -apple-system, sans-serif;
   
-  --max-w: 1100px;
+  --max-w: 1400px;
   --radius: 12px;
 }
 
@@ -107,14 +107,14 @@ ul {
 .container { 
   max-width:var(--max-w); 
   margin:0 auto; 
-  padding:0 2.5rem; 
+  padding:0 4rem; 
   width: 100%;
 }
 
 .container-narrow { 
-  max-width:640px; 
+  max-width:900px; 
   margin:0 auto; 
-  padding:0 2.5rem; 
+  padding:0 4rem; 
   width: 100%;
 }
 
@@ -405,14 +405,13 @@ ul {
 .showcase-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 8rem;
   align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .showcase-content {
-  max-width: 440px;
+  max-width: 540px;
 }
 
 .showcase-content h2 {
@@ -621,9 +620,9 @@ footer {
 }
 
 .content-card {
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4rem;
 }
 
 .content-card h2 {
@@ -681,10 +680,11 @@ footer {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  max-width: 900px;
+  gap: 8rem;
+  max-width: 1200px;
   margin: 4rem auto 0;
   align-items: start;
+  width: 100%;
 }
 
 .contact-info h3 {

@@ -687,49 +687,50 @@ ul { list-style:none; }
 footer {
   background: #0d1614; 
   color: rgba(255,255,255,0.55);
-  padding: 60px 0 24px;
+  padding: 0;
+  height: 76px;
   margin-top: auto;
+  display: flex;
+  align-items: center;
 }
 .footer-grid {
-  display: grid; 
-  grid-template-columns: 2fr repeat(3, 1fr); 
-  gap:2rem; 
-  margin-bottom:2.5rem;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 }
-.footer-brand .logo { color:#fff; margin-bottom:0.8rem; }
+.footer-brand .logo { 
+  color:#fff; 
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
 .footer-brand p {
-  font-size: 0.82rem; 
-  line-height:1.6; 
-  color: rgba(255,255,255,0.45); 
-  max-width:280px;
+  display: none;
 }
 .footer-col h5 {
-  color:#fff; 
-  font-family: var(--font-display); 
-  font-size:0.75rem;
-  text-transform:uppercase; 
-  letter-spacing:0.12em; 
-  margin-bottom:1rem; 
-  font-weight:600;
+  display: none;
 }
-.footer-col li { margin-bottom:0.5rem; }
+.footer-col ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col li { 
+  margin-bottom: 0; 
+}
 .footer-col a {
-  color: rgba(255,255,255,0.50); 
-  font-size:0.82rem; 
+  color: rgba(255,255,255,0.60); 
+  font-size: 0.85rem; 
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 .footer-col a:hover { color: rgba(255,255,255,0.95); text-decoration:none; }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding-top: 1.2rem;
-  display:flex; 
-  justify-content:space-between; 
-  align-items:center; 
-  flex-wrap:wrap; 
-  gap:1rem;
-  font-size: 0.78rem; 
-  color: rgba(255,255,255,0.35);
+  display: none;
 }
 .footer-bottom a { color: rgba(255,255,255,0.40); }
 .footer-bottom a:hover { color: rgba(255,255,255,0.80); }
@@ -1283,12 +1284,10 @@ footer {
   .store-badge .big { font-size: 1rem; }
   .store-badge .small { font-size: 0.65rem; }
   
-  footer { padding: 45px 0 20px; }
-  .footer-grid { gap: 1.25rem; margin-bottom: 1.5rem; }
-  .footer-col h5 { font-size: 0.72rem; margin-bottom: 0.8rem; }
-  .footer-col li { margin-bottom: 0.4rem; }
+  footer { padding: 0; height: 70px; }
+  .footer-grid { gap: 1rem; }
   .footer-col a { font-size: 0.8rem; }
-  .footer-bottom { padding-top: 1rem; font-size: 0.75rem; }
+  .footer-brand .logo { font-size: 1.1rem; }
 }
 
 /* Small mobile (≤480px) */

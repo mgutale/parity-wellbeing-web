@@ -740,7 +740,6 @@ footer {
 .page-header {
   padding: 160px 0 80px;
   background: linear-gradient(170deg, var(--teal-100) 0%, #f7f9fb 55%, var(--twilight-100) 100%);
-  text-align:center;
 }
 .page-header h1 {
   font-family: var(--font-display); 

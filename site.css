@@ -127,10 +127,9 @@ ul { list-style: none; }
 /* ─── Layout ─── */
 .container {
   width: 100%;
-  max-width: var(--max-w);
   margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 /* ─── Skip Link ─── */
@@ -1005,8 +1004,9 @@ footer {
 /* ─── Content Article ─── */
 .container-narrow {
   width: 100%;
-  max-width: 800px;
   margin: 0 auto;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .content-card {
@@ -1133,6 +1133,14 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .container-narrow {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .values-grid {
     grid-template-columns: 1fr;
   }

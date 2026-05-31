@@ -1,0 +1,2 @@
+Last pushed: $(date -u)
+Commit: $(git log -1 --oneline)
